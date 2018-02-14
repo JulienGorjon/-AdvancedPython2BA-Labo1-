@@ -2,8 +2,10 @@
 # Math library
 # Author: SÃ©bastien CombÃ©fis
 # Version: February 8, 2018
-
+from math import sqrt
 def fact(n):
+    if n==0:
+        return 0
     result=1
     while n>0:
         resut= result*n
@@ -17,7 +19,15 @@ def roots(a, b, c):
     Post: Returns a tuple with zero, one or two elements corresponding
           to the roots of the ax^2 + bx + c polynomial.
     """
-    pass
+    delta= b**2-4*a*c
+    if delta>0:
+        root1= (-b+sqrt(delta))/(2*a)
+        root2= (-b-sqrt(delta))/(2*a)
+        roots=root1,root2
+    elif delta==0:
+        roots= (-b/(2*a)),
+    else roots=()
+    return roots
 
 def integrate(function, lower, upper):
     """Approximates the integral of a fonction between two bounds
@@ -33,7 +43,7 @@ def integrate(function, lower, upper):
 if __name__ == '__main__':
     print(fact(5))
     print(roots(1, 0, 1))
-    print(integrate('x ** 2 - 1', -1, 1))
+   # print(integrate('x ** 2 - 1', -1, 1))
 
 
 
