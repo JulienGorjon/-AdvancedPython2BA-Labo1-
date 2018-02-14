@@ -38,12 +38,24 @@ def integrate(function, lower, upper):
     Post: Returns an approximation of the integral from 'lower' to 'upper'
           of the specified 'function'.
     """
-    pass
+    intervalle=upper-lower
+    dx=intervalle/1000
+    x1=lower
+    x2=x1+dx
+    result=0
+    while x1!=upper:
+        area= (function(x1)+function(x2))*(x2-x1)/2
+        result+=area
+        x1=x2
+        x2=x1+dx
+    return result
+
+
 
 if __name__ == '__main__':
     print(fact(5))
     print(roots(1, 0, 1))
-   # print(integrate('x ** 2 - 1', -1, 1))
+   print(integrate('x ** 2 - 1', -1, 1))
 
 
 
