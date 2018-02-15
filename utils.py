@@ -13,12 +13,6 @@ def fact(n):
         return result
 
 def roots(a, b, c):
-    """Computes the roots of the ax^2 + bx + x = 0 polynomial.
-    
-    Pre: -
-    Post: Returns a tuple with zero, one or two elements corresponding
-          to the roots of the ax^2 + bx + c polynomial.
-    """
     delta= b**2-4*a*c
     if delta>0:
         root1= (-b+sqrt(delta))/(2*a)
@@ -30,14 +24,6 @@ def roots(a, b, c):
     return roots
 
 def integrate(function, lower, upper):
-    """Approximates the integral of a fonction between two bounds
-    
-    Pre: 'function' is a valid Python expression with x as a variable,
-         'lower' <= 'upper',
-         'function' continuous and integrable between 'lowerâ€˜ and 'upper'.
-    Post: Returns an approximation of the integral from 'lower' to 'upper'
-          of the specified 'function'.
-    """
     intervalle=upper-lower
     dx=intervalle/1000
     x1=lower
